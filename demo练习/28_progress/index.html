@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>简单的进度条效果实现</title>
+    <style>
+        /*问题详情*/
+        
+        h2 {
+            text-align: center;
+        }
+        
+        .progress_out {
+            width: 960px;
+            margin: 50px auto;
+        }
+        
+        .prolayout {
+            /*width:837px;*/
+            width: 940px;
+            margin: 0 auto;
+        }
+        
+        .progress,
+        .progress2 {
+            height: 33px;
+            background: url(./images/progress.gif) no-repeat left bottom;
+            width: 940px;
+        }
+        
+        .progress2 {
+            background-position: left top;
+        }
+        
+        .progress_status1 {
+            width: 32px;
+        }
+        
+        .progress_status2 {
+            width: 256px;
+        }
+        
+        .progress_status3 {
+            width: 479px;
+        }
+        
+        .progress_status4 {
+            width: 703px;
+        }
+        
+        .progress_status5 {
+            width: 940px;
+        }
+        
+        .pro_status {
+            padding-top: 5px;
+            font-size: 14px;
+        }
+        
+        .pro_status .marginleft {
+            margin-left: 160px;
+        }
+        
+        .pro_status .marginleft2 {
+            margin-left: 160px;
+            *margin-left: 145px;
+            _margin-left: 150px;
+        }
+    </style>
+</head>
+
+<body onload="init()">
+    <h2>静态的进度条</h2>
+    <div class="progress_out">
+        <div class="prolayout">
+            <div class="progress ">
+                <div class="progress2 progress_status4"></div>
+            </div>
+        </div>
+        <div class="pro_status">
+            <span class="bcolor">等待回复</span>
+            <span class="bcolor marginleft">已转主管</span>
+            <span class="bcolor marginleft">&nbsp;已经处理</span>
+            <span class="bcolor marginleft">已经查看</span>
+            <span class="bcolor marginleft">等待评价</span>
+        </div>
+    </div>
+
+    <h2>动态的进度条</h2>
+    <div class="progress_out">
+        <div class="prolayout">
+            <div class="progress ">
+                <div id="progress" class="progress2 progress_status4"></div>
+            </div>
+        </div>
+        <div class="pro_status">
+            <span class="bcolor">等待回复</span>
+            <span class="bcolor marginleft">已转主管</span>
+            <span class="bcolor marginleft">&nbsp;已经处理</span>
+            <span class="bcolor marginleft">已经查看</span>
+            <span class="bcolor marginleft">等待评价</span>
+        </div>
+    </div>
+
+    <script>
+        function init() {
+            var progress = document.querySelector('#progress');
+            var clsNames = ['progress_status4', 'progress_status3', 'progress_status2', 'progress_status1', 'progress_status5'];
+            setInterval(function(e) {
+                var num = Math.ceil(Math.random() * 5);
+                clsNames.forEach(function(cls) {
+                    progress.classList.remove(cls);
+                });
+                progress.classList.add('progress_status' + num);
+            }, 1000);
+        }
+    </script>
+</body>
+
+</html>

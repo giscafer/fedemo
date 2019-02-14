@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>可拖拽窗口</title>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 400px;
+            height: 200px;
+            background-color: #eee;
+            position: relative;
+        }
+
+        #header {
+            position: absolute;
+            width: 100%;
+            top: 0px;
+            color: #fff;
+            font-size: 18px;
+            line-height: 28px;
+            cursor: pointer;
+            height: 30px;
+            background-color: rgb(29, 145, 145);
+        }
+        .content{
+            position: absolute;
+            top:30px;
+            height: auto;
+            max-height:200px;
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div id="header">
+            <div class="title">
+                <span>可拖拽区域</span>
+            </div>
+        </div>
+        <div class="content">
+            内容
+        </div>
+    </div>
+<script type="text/javascript" src="giscafer.js"></script><script type="text/javascript" src="app.js"></script></body>
+
+</html>

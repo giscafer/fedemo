@@ -1,0 +1,28 @@
+
+.center-content{
+    text-align: center;
+}
+.license {
+    padding: 1.5em;
+    border: 1px solid #d3d3d3;
+    background-color: #DEEBF7;
+    width: 60%;
+    margin: 4em auto;
+    min-width: 700px;
+}
+
+.license h3 {
+    border-bottom: 1px solid gray;
+    font-size: 1.42em;
+    font-weight: bold;
+    color: #556677;
+}
+
+.license ul {
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.license li {
+    color: #556677;
+}

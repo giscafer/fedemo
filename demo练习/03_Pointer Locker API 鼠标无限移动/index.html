@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>鼠标无限移动</title>
+</head>
+
+<body>
+    <div style="text-align:center;margin:0 auto;">
+        <p>请双击图片体验效果（建议用chrome浏览器）</p>
+        <a href="https://developer.mozilla.org/zh-CN/docs/API/Pointer_Lock_API">Pointer_Lock_API 文档</a>
+        <br>
+        <br>
+        <img id="show" src="demo1.png" alt="双击图片" width="600" />
+    </div>
+    <script type="text/javascript">
+        var imgEle = document.querySelector("#show");
+        var moveX = 0, moveY = 0;
+        function rotate3D(e) {
+            moveX = moveX + e.movementX; // movementX为鼠标移动水平距离
+            moveY = moveY + e.movementY; // movementY为鼠标移动垂直距离
+            imgEle.style.transform = "rotateX(" + moveY + "deg) rotateY(" + moveY + "deg)";
+        }
+        // 鼠标双击事件触发目标锁定
+        imgEle.addEventListener('dblclick', function () {
+            imgEle.requestPointerLock(); //Pointer Lock API
+        });
+        // 再次点击非图片页面区域，取消鼠标锁定处理
+        document.addEventListener('click', function () {
+            if (document.pointerLockElement === imgEle) {
+                document.exitPointerLock(); //Pointer Lock API
+            }
+        });
+
+         // 检测鼠标锁定状态变化
+        document.addEventListener('pointerlockchange', function () {
+            if (document.pointerLockElement === imgEle) {
+                document.addEventListener('mousemove', rotate3D, false);
+            }else{
+                document.removeEventListener('mousemove', rotate3D, false);
+            }
+        })
+    </script>
+</body>
+
+</html>

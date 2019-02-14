@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>15_CSS时间轴效果</title>
+    <style>
+        body {
+            padding: 50px;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px;
+        }
+
+        .timeline>.content::after {
+            content: '';
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 1px;
+            height: 100%;
+            background-color: rgb(228, 227, 227);
+        }
+
+        .timeline-on {
+            position: absolute;
+            left: -15px!important;
+            z-index: 12;
+        }
+
+        .date-point {
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            color: #fff;
+            font-size: 12px;
+            text-align: center;
+            border-radius: 50%;
+            background-color: #FF5722;
+            z-index: 12;
+        }
+
+        .date-title {
+            font-weight: 700;
+            line-height: 35px;
+        }
+
+        .timeline .event-group {
+            margin-top: 20px;
+        }
+
+        .timeline .event-group>.group-content .event .event-top {
+            line-height: 30px;
+        }
+
+        .timeline .timeline-img {
+            background: #75ce66;
+            position: absolute;
+            left: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .timeline .timeline-img img {
+            display: block;
+            width: 20px;
+            height: 20px;
+            position: relative;
+            left: 50%;
+            top: 50%;
+            margin-left: -10px;
+            margin-top: -10px;
+        }
+
+        .timeline video {
+            width: 400px;
+        }
+
+        .event {
+            margin-top: 10px;
+            padding-top: 14px;
+            padding-left: 10px;
+        }
+
+        .event-content .content {}
+
+        .event-content .content img.travel {
+            width: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Timeline 时间轴</h3>
+    <div class="timeline">
+        <div class="content">
+            <div class="event-group">
+                <div class="group-header">
+                    <div class="timeline-on date-point">1月</div>
+                    <div class="date-title">2018-01-13</div>
+                </div>
+                <div class="group-content">
+                    <div class="event">
+                        <div class="event-top">
+                            <div class="timeline-img timeline-on">
+                                <img src="./img/cd-icon-picture.svg" alt="地点" class="location">
+                            </div>
+                            <p>广州塔</p>
+                            <!---->
+                        </div>
+                        <div class="event-content">
+                            <div class="content">
+                                <p>广州塔488米观景台</p>
+                                <img src="./pictures/20180113.jpg" alt="广州塔夜景" class="travel" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="event-group">
+                <div class="group-header">
+                    <div class="timeline-on date-point">11月</div>
+                    <div class="date-title">2017-11-12</div>
+                </div>
+                <div class="group-content">
+                    <div class="event">
+                        <div class="event-top">
+                            <div class="timeline-img timeline-on">
+                                <img src="./img/cd-icon-picture.svg" alt="地点" class="location">
+                            </div>
+                            <p>清远市</p>
+                            <!---->
+                        </div>
+                        <div class="event-content">
+                            <div class="content">
+                                <p>清远徒步爬山，台风天气，徒步12公里挑战……</p>
+                                <img src="./pictures/20171112.jpg" alt="清远徒步爬山" class="travel" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="event-group">
+                <div class="group-header">
+                    <div class="timeline-on date-point">9月</div>
+                    <div class="date-title">2017-09-18</div>
+                </div>
+                <div class="group-content">
+                    <div class="event">
+                        <div class="event-top">
+                            <div class="timeline-img timeline-on">
+                                <img src="./img/cd-icon-movie.svg" alt="视频" class="location">
+                            </div>
+                            <p>广州市</p>
+                            <!---->
+                        </div>
+                        <div class="event-content">
+                            <div class="content">
+                                <p>广州动物园海底世界</p>
+                                <video src="./pictures/20170918.mp4" controls="controls">
+                                    您的浏览器不支持 video 标签。
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="event-group">
+                <div class="group-header">
+                    <div class="timeline-on date-point">7月</div>
+                    <div class="date-title">2016-07-25</div>
+                </div>
+                <div class="group-content">
+                    <div class="event">
+                        <div class="event-top">
+                            <div class="timeline-img timeline-on">
+                                <img src="./img/cd-icon-location.svg" alt="地点" class="location">
+                            </div>
+                            <p>西安市</p>
+                            <!---->
+                        </div>
+                        <div class="event-content">
+                            <div class="content">
+                                <p>北京——西安，回学校——广州，结束两年北漂</p>
+                                <img src="./pictures/20160725.jpg" alt="" class="travel" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="event-group">
+                    <div class="group-header">
+                        <div class="timeline-on date-point">4月</div>
+                        <div class="date-title">2016-04-30</div>
+                    </div>
+                    <div class="group-content">
+                        <div class="event">
+                            <div class="event-top">
+                                <div class="timeline-img timeline-on">
+                                    <img src="./img/cd-icon-picture.svg" alt="地点" class="location">
+                                </div>
+                                <p>福建省南平市</p>
+                                <!---->
+                            </div>
+                            <div class="event-content">
+                                <div class="content">
+                                    <p>武夷山，山美水美，茶更香，大红袍、正山小种、金骏眉等</p>
+                                    <img src="./pictures/20160430.jpg" alt="武夷山" class="travel" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="event-group">
+                <div class="group-header">
+                    <div class="timeline-on date-point">4月</div>
+                    <div class="date-title">2016-04-24</div>
+                </div>
+                <div class="group-content">
+                    <div class="event">
+                        <div class="event-top">
+                            <div class="timeline-img timeline-on">
+                                <img src="./img/cd-icon-picture.svg" alt="地点" class="location">
+                            </div>
+                            <p>福州市</p>
+                            <!---->
+                        </div>
+                        <div class="event-content">
+                            <div class="content">
+                                <p>三坊七巷</p>
+                                <img src="./pictures/20160424.jpg" alt="三坊七巷" class="travel" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         
+            <div class="event-group">
+                <div class="group-header">
+                    <div class="timeline-on date-point">3月</div>
+                    <div class="date-title">2016-03-06</div>
+                </div>
+                <div class="group-content">
+                    <div class="event">
+                        <div class="event-top">
+                            <div class="timeline-img timeline-on">
+                                <img src="./img/cd-icon-picture.svg" alt="地点" class="location">
+                            </div>
+                            <p>北京市</p>
+                            <!---->
+                        </div>
+                        <div class="event-content">
+                            <div class="content">
+                                <p>北京圆明园遗址……</p>
+                                <img src="./pictures/20160306.jpg" alt="北京圆明园遗址……" class="travel" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

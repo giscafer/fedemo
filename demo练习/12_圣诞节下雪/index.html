@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>圣诞节下雪</title>           
+    <style>
+        body {
+            padding:0; margin:0;
+            background: #0f0e13fa;
+        }
+        #bg {
+            display: block;
+            margin: 25px auto;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>  
+<img id="bg" src="./images/bg.jpg" alt="snowy landscape">
+<script src="./images/jsized.snow.min.js" type="text/javascript"></script>        
+<script>
+    /**
+     * This function takes 2 arguments
+     * First is the path to the directory with snowflake images
+     * Second is the maximum number of snowflakes, please do not
+     * set this number above 60 as it will impact the performance
+     */
+    createSnow('', 70);
+</script>
+
+</body>
+</html>

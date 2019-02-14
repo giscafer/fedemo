@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Notification</title>
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div style="margin:200px;">
+        <button onclick="notifyMe()" class="btn btn-primary">点击我获取授权</button>
+    </div>
+    <script type="text/javascript">
+
+        function noticeHandler() {
+            if (Notification.permission == "granted") {
+                var notification = new Notification("giscafer前端带练：", {
+                    body: 'HTML5 浏览器提醒 Web Notification',
+                    icon: 'https://file.xiaomiquan.com/c6/b2/c6b22d64438b151e19427bf6ba13a0beb061927c479789d4206cb4955ac2e345.jpg'
+                });
+
+                notification.onclick = function () {
+                    window.open('https://gitee.com/xiaomiquan/fetraning');
+                    notification.close();
+                };
+            }
+        }
+        function notifyMe() {
+            // 先检查浏览器是否支持
+            if (!("Notification" in window)) {
+                alert("浏览器不支持Web Notification API");
+            }
+
+            // 检查用户是否同意接受通知
+            else if (Notification.permission === "granted") {
+                // 创建提示信息
+                noticeHandler();
+            }
+
+            // 否则我们需要向用户获取权限
+            else if (Notification.permission !== 'denied') { //因为Notification.permission有三种值，default,denied,granted，默认是default
+                // 创建提示信息
+
+                Notification.requestPermission(function (permission) {
+                    noticeHandler();
+                });
+            }
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+body{
+    background: #7cb342;
+    height: 100%;
+}
+.bs-docs-section{
+    max-width: 1400px;
+    margin:  100px auto;
+    margin-top:10px;
+}
+#btn-content{
+    display: none;
+}
+#btn-content h4 {
+    line-height: 110%;
+    margin: 1.14rem 0 .912rem;
+    font-size: 2.28em;
+    color: #fff;
+}
+
+.css-13mo65m {
+    padding: 4px 8px;
+    margin: 10px;
+    border: 2px solid #fff;
+    color: #fff;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.css-1vokce0 {
+    width: 456px;
+    height: 600px;
+    right: 56px;
+    bottom: 0px;
+    padding: 0 56px 0 56px;
+    position: fixed;
+    left: 0;
+    color: #fff;
+}
+
+.css-101ncaf {
+    width: 800px;
+    height: 800px;
+    position: fixed;
+    z-index: 1000;
+    right: -348.4px;
+    bottom: -327.2px;
+    visibility: hidden;
+    transition: visibility 0.3s cubic-bezier(0.42, 0, 0.58, 1);
+    -webkit-transition: visibility 0.3s cubic-bezier(0.42, 0, 0.58, 1);
+    -moz-transition: visibility 0.3s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.css-1oz4tqn::before,
+[data-css-1oz4tqn]::before {
+    content: " ";
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transform: scale(1);
+    border-radius: 50%;
+    transition: transform 0.3s cubic-bezier(0.42, 0, 0.58, 1), opacity 0.3s cubic-bezier(0.42, 0, 0.58, 1), -webkit-transform 0.3s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.css-ghzv10 {
+    position: absolute;
+    top: 344px;
+    left: 344px;
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+    z-index: 100001;
+}
+
+.css-ghzv10:before {
+    content: " ";
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: transform 0.3s cubic-bezier(0.42, 0, 0.58, 1), opacity 0.3s cubic-bezier(0.42, 0, 0.58, 1), -webkit-transform 0.3s cubic-bezier(0.42, 0, 0.58, 1);
+    transform: scale(0);
+    -webkit-transition: transform 0.3s cubic-bezier(0.42, 0, 0.58, 1), opacity 0.3s cubic-bezier(0.42, 0, 0.58, 1), -webkit-transform 0.3s cubic-bezier(0.42, 0, 0.58, 1);
+    -moz-transition: transform 0.3s cubic-bezier(0.42, 0, 0.58, 1), opacity 0.3s cubic-bezier(0.42, 0, 0.58, 1);
+    -webkit-transform: scale(0);
+}
+
+.css-1xamfmm {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 56px;
+    height: 56px;
+    background-color: rgb(91, 49, 166);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    visibility: visible;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -webkit-transform: translate(-50%, -50%);
+}
+
+.css-1owq2hv {
+    width: 800px;
+    height: 800px;
+    position: fixed;
+    z-index: 1000;
+    right: -348.4px;
+    bottom: -327.2px;
+    visibility: visible;
+    transition: visibility 0.3s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.css-j9z7vu {
+    color: #fff;
+}
+
+.css-1oz4tqn {
+    position: absolute;
+    top: 344px;
+    left: 344px;
+    width: 112px;
+    height: 112px;
+    z-index: 100001;
+    border-radius: 50%;
+}
+
+.css-5sa19j {
+    background-color: rgb(91, 49, 166);
+    opacity: 0.95;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 100000;
+    transform: scale(1);
+    border-radius: 50%;
+    transition: transform 0.3s cubic-bezier(0.42, 0, 0.58, 1), opacity 0.3s cubic-bezier(0.42, 0, 0.58, 1), -webkit-transform 0.3s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.css-xnjket {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 99999998;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.css-1htfbdm {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    z-index: 199999999;
+}

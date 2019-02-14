@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图片懒加载Intersection Observer</title>
+    <style>
+        p,
+        h2,
+        small {
+            font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+        }
+        
+        p strong {
+            font-size: 25px;
+        }
+        
+        h2 {
+            margin: 0;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        .static-header {
+            position: fixed;
+            z-index: 1000;
+            background: white;
+            text-align: center;
+            width: 100%;
+            margin-top: -8px;
+            margin-left: -10px;
+            padding: 10px;
+        }
+        
+        .images {
+            position: absolute;
+            margin-top: 110px;
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
+        
+        .images img {
+            max-width: 500px;
+        }
+        
+        .images .image-container,
+        .images img {
+            height: 350px;
+        }
+    </style>
+    <!-- polyfill js -->
+    <script src="./intersection-observer.js"></script>
+</head>
+
+<body onload="onInit()">
+    <div class="static-header">
+        <h2>滚动以加载更多图片</h2>
+        <p>
+            显示图片总数:
+            <strong id="totalImagesShown"></strong>
+        </p>
+        <p>图片来自Unsplash.com，国外网站，网速不好的同学可能看不出demo效果</p>
+        <p>本demo没有做浏览器兼容性，只是为了举例Intersection Observer使用场景。但是实际上通过<a href="https://github.com/w3c/IntersectionObserver/tree/master/polyfill">polyfill</a> 来做兼容可以兼容到IE7+，所以此功能非常好用</p>
+        <small>Picture courtesy: <a href="https://unsplash.com/">Unsplash</a></small>
+    </div>
+    <div class="images">
+        <!--  <div class="image-container">
+            <img name='beautiful-image' src="">
+        </div> -->
+    </div>
+    <script src="./app.js"></script>
+</body>
+
+</html>
