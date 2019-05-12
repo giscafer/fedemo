@@ -175,5 +175,12 @@
         "img": "http://demo.felearn.com/demo%E7%BB%83%E4%B9%A0/33_svg-clone-sripte/cover.gif",
         "git": "https://gitee.com/xiaomiquan/fetraning/tree/master/demo练习/33_svg-clone-sripte",
         "url": "http://demo.felearn.com/demo%E7%BB%83%E4%B9%A0/33_svg-clone-sripte"
+    },
+    {
+        "name": "Changelog 变更纪录效果",
+        "description": "欢迎关注，持续更新",
+        "img": "https://demo.felearn.com/demo%E7%BB%83%E4%B9%A0/34_changelog/cover.gif",
+        "git": "https://gitee.com/xiaomiquan/fetraning/tree/master/demo练习/34_changelog",
+        "url": "https://demo.felearn.com/demo%E7%BB%83%E4%B9%A0/34_changelog/"
     }
 ]

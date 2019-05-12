@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ChangeLog</title>
+
+    <style>
+        .changelog {
+            background-color: #fff;
+            color: #000;
+        }
+
+        .changelog .sl-changelog {
+            position: relative;
+            max-width: 600px;
+            padding-left: 120px;
+            margin: 80px auto 0 auto;
+            font-size: 18px
+        }
+
+        .changelog .sl-changelog .sl-changelog-item {
+            position: relative;
+            padding: 0 25px 90px 25px;
+            margin: 0;
+            list-style: none;
+            z-index: 2;
+            border-radius: 4px
+        }
+
+        .changelog .sl-changelog .sl-changelog-item p {
+            margin: 0
+        }
+
+        .changelog .sl-changelog .sl-changelog-item a {
+            color: #0070B2
+        }
+
+        .changelog .sl-changelog .sl-changelog-item-line {
+            position: absolute;
+            top: 0;
+            left: -11px;
+            width: 2px;
+            bottom: 0;
+            background-color: #222
+        }
+
+        .changelog .sl-changelog .sl-changelog-item:first-child .sl-changelog-item-line {
+            top: 13px
+        }
+
+        .changelog .sl-changelog .sl-changelog-item:last-child .sl-changelog-item-line {
+            height: 13px
+        }
+
+        .changelog .sl-changelog .sl-changelog-item-bullet {
+            position: absolute;
+            top: 3px;
+            left: -23px;
+            width: 20px;
+            height: 20px;
+            border-radius: 20px;
+            background-color: #fff;
+            border: 3px solid #222;
+            -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+            -webkit-transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.15s !important;
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.15s !important
+        }
+
+        .changelog .sl-changelog .sl-changelog-item.is-visible .sl-changelog-item-bullet {
+            -webkit-transform: none;
+            transform: none
+        }
+
+        .changelog .sl-changelog .sl-changelog-item-date {
+            position: absolute;
+            right: 100%;
+            white-space: nowrap;
+            padding-right: 45px;
+            color: #bbb;
+            opacity: 0;
+            -webkit-transform: translateX(40px);
+            transform: translateX(40px);
+            -webkit-transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.15s !important;
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.15s !important
+        }
+
+        .changelog .sl-changelog .sl-changelog-item-description {
+            opacity: 0;
+            -webkit-transform: translateX(-40px);
+            transform: translateX(-40px);
+            -webkit-transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.15s !important;
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.15s !important;
+            word-break: break-word
+        }
+
+        .changelog .sl-changelog .sl-changelog-item.is-visible .sl-changelog-item-date,
+        .changelog .sl-changelog .sl-changelog-item.is-visible .sl-changelog-item-description {
+            opacity: 1;
+            -webkit-transform: none;
+            transform: none
+        }
+
+        .changelog .sl-changelog .sl-changelog-item.is-unread .sl-changelog-item-date:before {
+            content: 'New';
+            display: inline-block;
+            position: relative;
+            top: -1px;
+            padding: 1px 4px;
+            margin-right: 10px;
+            border-radius: 2px;
+            font-size: 12px;
+            text-transform: uppercase;
+            border: 1px solid #ccc;
+            color: #ccc
+        }
+
+        .changelog .sl-changelog .sl-changelog-item.is-unread .sl-changelog-item-bullet {
+            border-color: #1baee1
+        }
+
+        .changelog .sl-changelog .sl-changelog-item.is-unread .sl-changelog-item-line {
+            background-color: #1baee1
+        }
+
+        .changelog .sl-changelog .sl-changelog-tag {
+            position: relative;
+            padding: 1px 4px;
+            top: -2px;
+            margin-left: 6px;
+            font-size: 12px;
+            color: #1baee1;
+            border: 1px solid #1baee1;
+            border-radius: 2px;
+            cursor: default;
+            white-space: nowrap
+        }
+
+        .changelog .sl-changelog .sl-changelog-tag:hover {
+            color: #fff;
+            background-color: #1baee1
+        }
+
+        @media screen and (max-width: 750px) {
+            .changelog .sl-changelog {
+                padding-left: 45px
+            }
+
+            .changelog .sl-changelog .sl-changelog-item-date {
+                position: static;
+                -webkit-transform: translateX(-40px);
+                transform: translateX(-40px)
+            }
+
+            .changelog .sl-changelog .sl-changelog-item.is-unread .sl-changelog-item-date:before {
+                display: none
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="main" class="main changelog" role="main">
+
+        <ul class="sl-changelog">
+            <li class="sl-changelog-item is-unread">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Apr 2019</p>
+                <p class="sl-changelog-item-description">Present a lot of code? Now you can show <a target='_blank'
+                        href='https://slides.com/news/code-line-numbers'>line numbers</a> and emphasize specific lines!
+                </p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Feb 2019</p>
+                <p class="sl-changelog-item-description">The new <a target='_blank'
+                        href='https://slides.com/news/slide-settings'>Slide Settings</a> menu lets you set a
+                    slide-specific transition, autoplay duration and more.</p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Jan 2019</p>
+                <p class="sl-changelog-item-description">Now you can get notified when your private presentation links
+                    are opened. <span class='sl-changelog-tag'
+                        data-preview-media='https://static.slid.es/site/features/v1/private-link-notification.png'
+                        data-preview-media-width='1367' data-preview-media-height='843'>Take a look</span></p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Dec 2018</p>
+                <p class="sl-changelog-item-description">Slides Team members can now browse and insert slides from their
+                    teammates decks! <span class='sl-changelog-tag'
+                        data-preview-media='https://static.slid.es/site/features/v1/templates-internal-decks.mp4'
+                        data-preview-media-width='2980' data-preview-media-height='1738'>Take a look</span></p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Dec 2018</p>
+                <p class="sl-changelog-item-description">Introducing <a target='_blank'
+                        href='https://slides.com/news/interactivity'>interactivity</a>! Now you can add a whole new
+                    level of depth to your presentations. <span class='sl-changelog-tag'
+                        data-preview-media='https://static.slid.es/site/features/v1/interactivity.mp4'
+                        data-preview-media-width='1082' data-preview-media-height='768'>Check it out</span></p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Nov 2018</p>
+                <p class="sl-changelog-item-description">Now you can crop images right from the Slides editor! <span
+                        class='sl-changelog-tag' data-preview-media='https://static.slid.es/support/crop-image.mp4'
+                        data-preview-media-width='1276' data-preview-media-height='794'>Check it out</span></p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Jul 2018</p>
+                <p class="sl-changelog-item-description">Write a lot of speaker notes? Now you can keep the notes window
+                    visible while editing. <span class='sl-changelog-tag'
+                        data-preview-media='https://static.slid.es/site/features/v1/docked-notes.gif'
+                        data-preview-media-width='1435' data-preview-media-height='965'>See how</span></p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">June 2018</p>
+                <p class="sl-changelog-item-description">Introducing <a target='_blank'
+                        href='https://slides.com/news/fragments-2'>Fragments 2.0</a> – a new and improved interface for
+                    creating slide fragments. <span class='sl-changelog-tag'
+                        data-preview-media='https://static.slid.es/site/features/v1/fragments-2.mp4'
+                        data-preview-media-width='1382' data-preview-media-height='774'>Preview</span></p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">May 2018</p>
+                <p class="sl-changelog-item-description">Now you can select and configure multiple content blocks at
+                    once. <span class='sl-changelog-tag'
+                        data-preview-media='https://static.slid.es/site/features/v1/bulk-edit-blocks.mp4'
+                        data-preview-media-width='1416' data-preview-media-height='904'>Preview</span></p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Mar 2018</p>
+                <p class="sl-changelog-item-description">Introducing GIPHY and Unsplash <a target='_blank'
+                        href='http://slides.com/news/image-search'>search</a>! Now it’s easier than ever to find great
+                    images for your slides.</p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Feb 2018</p>
+                <p class="sl-changelog-item-description">Make your profile page easier to browse with <a target='_blank'
+                        href='http://help.slides.com/knowledgebase/articles/1838059'>tags</a>!</p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Jan 2018</p>
+                <p class="sl-changelog-item-description">We've revamped how you arrange slides! Now with drag-and-drop,
+                    multi-select and more! <span class='sl-changelog-tag'
+                        data-preview-media='https://static.slid.es/site/features/v1/arrange.gif'
+                        data-preview-media-width='1112' data-preview-media-height='774'>Preview</span></p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Nov 2017</p>
+                <p class="sl-changelog-item-description">Insert and reuse slides from any of your presentations. <span
+                        class='sl-changelog-tag'
+                        data-preview-media='https://static.slid.es/site/features/v1/insert-from-deck.gif'
+                        data-preview-media-width='1134' data-preview-media-height='872'>See how</span></p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">May 2017</p>
+                <p class="sl-changelog-item-description">We’ve made it easier than ever to <a target='_blank'
+                        href='http://slides.com/news/video'>add videos</a> to your presentations.</p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Feb 2017</p>
+                <p class="sl-changelog-item-description">The new <a target='_blank'
+                        href='http://help.slides.com/knowledgebase/articles/774057'>presentation size</a> setting gives
+                    you full control over your deck's aspect ratio.</p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Jan 2017</p>
+                <p class="sl-changelog-item-description">Turn any content into a presentation using the new <a
+                        target='_blank' href='https://slides.com/developers#define-api'>define API</a>!</p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Jan 2017</p>
+                <p class="sl-changelog-item-description">Now you can <a target='_blank'
+                        href='http://slides.com/news/rotation'>rotate elements</a> in the editor.</p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Oct 2016</p>
+                <p class="sl-changelog-item-description">You can now use <a target='_blank'
+                        href='http://slides.com/news/custom-fonts'>custom fonts</a> from Typekit and Google in your
+                    presentations.</p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Sep 2016</p>
+                <p class="sl-changelog-item-description">Learn all about our developer-friendly features at <a
+                        target='_blank' href='https://slides.com/developers'>slides.com/developers</a>.</p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">May 2016</p>
+                <p class="sl-changelog-item-description">Introducing <a target='_blank'
+                        href='http://blog.slides.com/post/144953373943/introducing-collaborate-on-slides'>Collaborate</a>
+                    on Slides – shared editing and per-slide feedback on your presentations!</p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Mar 2016</p>
+                <p class="sl-changelog-item-description">The new <a target='_blank'
+                        href='http://slides.com/news/fragment-styles'>fragment styles</a> make it possible to show or
+                    hide slide content in animated steps.</p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Dec 2015</p>
+                <p class="sl-changelog-item-description">New content type for drawing <a target='_blank'
+                        href='http://slides.com/news/lines'>directional lines and arrows</a>!</p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Nov 2015</p>
+                <p class="sl-changelog-item-description">Now you can show <a target='_blank'
+                        href='http://slides.com/news/slide-numbers'>slide numbers</a> on your presentations.</p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Sep 2015</p>
+                <p class="sl-changelog-item-description">Speaker notes can now be <a target='_blank'
+                        href='http://slides.com/news/share-slide-notes'>shared with your viewers</a>. Works with PDF
+                    exports, too!</p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Sep 2015</p>
+                <p class="sl-changelog-item-description">Add tables to your decks with the new <a target='_blank'
+                        href='http://slides.com/news/tables'>table block</a>.</p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Apr 2015</p>
+                <p class="sl-changelog-item-description">The <a target='_blank'
+                        href='http://blog.slides.com/post/116644963098/announcing-the-media-library'>media library</a>
+                    makes it possible to organize and reuse assets. Includes support for <strong>SVG</strong>!</p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Apr 2015</p>
+                <p class="sl-changelog-item-description">Now you can <a target='_blank'
+                        href='http://blog.slides.com/post/116186958068/export-to-zip'>export to ZIP</a>! Great for
+                    offline presenting and self-hosting.</p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Feb 2015</p>
+                <p class="sl-changelog-item-description">New and improved <a target='_blank'
+                        href='http://blog.slides.com/post/110250997213/more-powerful-tools-for-sharing'>tools for
+                        sharing private decks</a>, including password protection.</p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Jan 2015</p>
+                <p class="sl-changelog-item-description"><a target='_blank'
+                        href='http://help.slides.com/knowledgebase/articles/487268-import-from-pdf-or-powerpoint'>Import
+                        PDF and PowerPoint</a> documents as image slides.</p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Nov 2014</p>
+                <p class="sl-changelog-item-description">The <a target='_blank'
+                        href='http://slides.com/news/slides-for-developers'>developer mode</a> adds developer-friendly
+                    features, such as a per-slide HTML editor.</p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Nov 2014</p>
+                <p class="sl-changelog-item-description">Use the <a target='_blank'
+                        href='http://slides.com/news/math'>Math block</a> to seamlessly display math formulas in your
+                    decks.</p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Oct 2014</p>
+                <p class="sl-changelog-item-description">Learn more about your audience with the new <a target='_blank'
+                        href='http://blog.slides.com/post/101259389283/slides-google-analytics'>Google Analytics
+                        integration</a>.</p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Sep 2014</p>
+                <p class="sl-changelog-item-description">Never worry about losing any of your work. The <a
+                        target='_blank'
+                        href='http://blog.slides.com/post/97303104853/revision-history-for-everyone'>revision
+                        history</a> is now available to everyone, for free!</p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Sep 2014</p>
+                <p class="sl-changelog-item-description">Meet the brand <a target='_blank'
+                        href='http://slides.com/news/new-editor'>new Slides editor</a>!</p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">May 2014</p>
+                <p class="sl-changelog-item-description">We turned one year old! To celebrate we're moving to a domain
+                    that's easier to remember: <strong>slides.com</strong></p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Mar 2014</p>
+                <p class="sl-changelog-item-description"><a target='_blank'
+                        href='http://blog.slides.com/post/80262061637/introducing-a-new-way-to-present'>Introducing a
+                        new way to present</a> - live presenting, speaker view and remote controlling.</p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Feb 2014</p>
+                <p class="sl-changelog-item-description"><a target='_blank'
+                        href='http://blog.slides.com/post/77175142194/introducing-slides-for-teams'>Slides for
+                        Teams</a>! Includes shared custom themes and custom branded subdomains.</p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Dec 2013</p>
+                <p class="sl-changelog-item-description">The feedback forum and our ever growing list of help articles
+                    has relocated to <a target='_blank' href='http://help.slides.com'>help.slides.com</a>.</p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Oct 2013</p>
+                <p class="sl-changelog-item-description"><strong>Yearly billing</strong> is now available for all paid
+                    accounts. Comes with a two-month discount!</p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Oct 2013</p>
+                <p class="sl-changelog-item-description">Decks can now <a target='_blank'
+                        href='https://slides.com/news/autoplay'>autoplay</a>.</p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Sep 2013</p>
+                <p class="sl-changelog-item-description">The Slides site has been redesigned. This includes a brand new
+                    page for exploring presentations. <a target='_blank'
+                        href='http://blog.slides.com/post/61413748240/present-your-ideas'>More info</a>.</p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Jul 2013</p>
+                <p class="sl-changelog-item-description">Customize the ins and outs of your decks using the new
+                    <strong><a target='_blank'
+                            href='http://help.slides.com/knowledgebase/articles/253052-css-editor-pro-'>CSS
+                            editor</a></strong>.</p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Jul 2013</p>
+                <p class="sl-changelog-item-description">It's now possible to add <strong>background images</strong> to
+                    your slides. <a target='_blank' href='http://slides.com/news/background-images'>Check out the
+                        demo</a>.</p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Jul 2013</p>
+                <p class="sl-changelog-item-description">You can now <strong>export decks to PDF</strong>!</p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">Jun 2013</p>
+                <p class="sl-changelog-item-description"><strong>Dropbox sync</strong> gives you full offline access to
+                    your decks. <a target='_blank'
+                        href='http://blog.slides.com/post/52542030412/update-dropbox-sync-free-positioning-mode-and'>Read
+                        the blog post.</a></p>
+            </li>
+            <li class="sl-changelog-item ">
+                <div class="sl-changelog-item-line"></div>
+                <div class="sl-changelog-item-bullet"></div>
+                <p class="sl-changelog-item-date">May 2013</p>
+                <p class="sl-changelog-item-description">Slides was released.</p>
+            </li>
+        </ul>
+    </div>
+    <script>
+
+        (function () {
+
+            function updateVisibleListItems(event, firstRun) {
+
+                var top = 0,
+                    bottom = window.innerHeight - 100;
+
+                [].slice.call(document.querySelectorAll('.sl-changelog-item')).forEach(function (element, i) {
+
+                    var rect = element.getBoundingClientRect();
+
+                    if (rect.bottom >= top && rect.top <= bottom) {
+                        if (firstRun === true) {
+                            setTimeout(function () {
+                                this.classList.add('is-visible');
+                            }.bind(element), i * 100);
+                        }
+                        else {
+                            element.classList.add('is-visible');
+                        }
+                    }
+                    else {
+                        element.classList.remove('is-visible');
+                    }
+
+                });
+
+            }
+
+            // Highlight an item as unread if the ?debug flag is present
+            if (/debug/i.test(window.location.search)) {
+                var changelogItems = [].slice.call(document.querySelectorAll('.sl-changelog-item'));
+                if (changelogItems.length) {
+                    changelogItems[0].classList.add('is-unread');
+                }
+            }
+
+            window.addEventListener('resize', updateVisibleListItems);
+            window.addEventListener('scroll', updateVisibleListItems);
+
+            updateVisibleListItems(null, true);
+
+        })();
+
+    </script>
+</body>
+
+</html>
