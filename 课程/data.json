@@ -1,15 +1,31 @@
 [
-    {
-      "name": "node.js npm 模块开发与发布",
-      "description":"欢迎关注，持续更新",
-      "img": "./课程/npm.jpg",
-      "url": "https://segmentfault.com/l/1500000011901133"
-    },
-    {
-      "name": "PWA技术分享",
-      "description":"欢迎关注，持续更新",
-      "img": "./课程/pwa.jpg",
-      "url": "https://t.zsxq.com/r3rBmqV"
-    }
-  ]
-  
+  {
+    "name": "node.js npm 模块开发与发布",
+    "description": "欢迎关注，持续更新",
+    "img": "./课程/npm.jpg",
+    "url": "https://segmentfault.com/l/1500000011901133"
+  },
+  {
+    "name": "PWA技术分享",
+    "description": "欢迎关注，持续更新",
+    "img": "./课程/pwa.jpg",
+    "url": "https://t.zsxq.com/r3rBmqV"
+  },
+  {
+    "img": "./课程/vdom.png",
+    "name": "深入认识 Virtual DOM",
+    "subtitle": "Virtual DOM 技术分享",
+    "meta": "公司内部技术分享 PPT",
+    "description": "Virtual DOM 技术学习分享",
+    "url": "https://slides.com/giscafer/deck/fullscreen",
+  },
+  {
+    "img": "./课程/feteam.jpg",
+    "name": "前端团队工程化实践",
+    "subtitle": "经验总结 技术分享",
+    "meta": "开发流程规范、项目管理、组件化、前后端协助、CI/CD",
+    "description": "开发流程规范、项目管理、组件化、前后端协助、CI/CD",
+    "url": "https://slides.com/giscafer/deck-2/fullscreen",
+    "gitUrl": "https://github.com/giscafer/front-end-manual/issues/26"
+  }
+]
